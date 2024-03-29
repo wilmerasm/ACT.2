@@ -69,3 +69,14 @@ class Transportesdelllano:
             # Agregar una arista desde la estación actual hacia la estación de destino
             # con un atributo de peso igual al tiempo de viaje
              G.add_edge(estacion, conexion[0], weight=conexion[1])
+
+             
+        # Dibujar el grafo
+             
+        plt.figure(figsize=(20, 8))  # Crear una nueva figura con tamaño personalizado
+        pos = nx.spring_layout(G)  # Calcular la disposición de los nodos utilizando el algoritmo spring
+        nx.draw(G, pos, with_labels=True, node_size=7000, node_color='pink',  font_size=11, font_weight='bold', arrowsize=30)  # Dibujar el grafo con etiquetas de nodos, tamaño y estilo de nodo personalizados
+        labels = nx.get_edge_attributes(G, 'weight')  # Obtener los atributos de peso de las aristas
+        nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)  # Dibujar las etiquetas de las aristas
+        plt.title("Grafo del Sistema de Transporte")  # Establecer el título del gráfico
+        plt.show()  # Mostrar el gráfico
