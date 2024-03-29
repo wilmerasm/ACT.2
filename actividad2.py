@@ -80,3 +80,16 @@ class Transportesdelllano:
         nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)  # Dibujar las etiquetas de las aristas
         plt.title("Grafo del Sistema de Transporte")  # Establecer el título del gráfico
         plt.show()  # Mostrar el gráfico
+
+# Crear un sistema de transporte
+sistema = Transportesdelllano()
+
+# Agregar conexiones entre estaciones y tiempos de viaje
+sistema.agregar_conexion("Sanjose", "Versalles", 15)
+sistema.agregar_conexion("Sanjose", "Centro", 20)
+sistema.agregar_conexion("Versalles", "Alcaravanes", 10)
+sistema.agregar_conexion("Centro", "Alcaravanes", 8)
+sistema.agregar_conexion("Centro", "Olimpico", 10)
+sistema.agregar_conexion("Alcaravanes", "Olimpico", 5)
+sistema.agregar_conexion("Alcaravanes", "Pradera", 15)
+sistema.agregar_conexion("Olimpico", "Pradera", 7)
