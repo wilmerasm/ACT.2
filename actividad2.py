@@ -93,3 +93,17 @@ sistema.agregar_conexion("Centro", "Olimpico", 10)
 sistema.agregar_conexion("Alcaravanes", "Olimpico", 5)
 sistema.agregar_conexion("Alcaravanes", "Pradera", 15)
 sistema.agregar_conexion("Olimpico", "Pradera", 7)
+
+
+
+# Encontrar la ruta óptima desde "sanjose" hasta "pradera"
+ruta_optima = sistema.encontrar_ruta_optima("Sanjose", "Pradera")
+
+# Visualizar el grafo
+sistema.dibujar_grafo()
+
+# Imprimir la ruta óptima encontrada
+if ruta_optima:
+    print("La ruta óptima es:", ruta_optima)
+else:
+    print("No hay ruta disponible.")
