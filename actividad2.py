@@ -49,3 +49,23 @@ class Transportesdelllano:
                                                 
       
         return ("NO se encontro ruta")
+
+
+
+    def dibujar_grafo(self):
+        # Crear un objeto de grafo dirigido
+        G = nx.DiGraph()
+
+        
+        # Iterar sobre cada estación y sus conexiones en el grafo
+        for estacion, conexiones in self.grafo.items():
+            # Agregar cada estación como un nodo al grafo
+            G.add_node(estacion)
+
+        # Iterar sobre cada estación y sus conexiones en el grafo
+        for estacion, conexiones in self.grafo.items():
+            # Iterar sobre cada conexión desde la estación actual
+            for conexion in conexiones:
+            # Agregar una arista desde la estación actual hacia la estación de destino
+            # con un atributo de peso igual al tiempo de viaje
+             G.add_edge(estacion, conexion[0], weight=conexion[1])
